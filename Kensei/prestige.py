@@ -1,0 +1,1 @@
+#Kensei higashi Prestige functions 
