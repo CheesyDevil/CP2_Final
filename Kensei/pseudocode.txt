@@ -1,0 +1,55 @@
+import pygame
+Import pygame gui
+import csv
+import math
+		
+Open CSV and read
+when game starts
+	load life time rocks from csv
+	load prestige level from csv
+	load strange matter from csv
+
+	Prestige bonus= 1 + (prestige level * 0.01)
+end
+
+
+function fro get prestige level( life time rocks)
+	prestige level = floor( cube_root( life time rocks /1,000,000,000,000) )
+	return prestige level
+end
+
+
+Func when prestige button is clicked
+	 new prestige leve = get prestige level ( life time rocks)
+	Strange matter they got = new prestige level - prestige level
+
+	show prestige screen
+    	show  life time rocks
+    	show new prestige level
+    	show strange matter they got
+end
+
+
+Func when player confirms prestige
+	prestige level = new prestige leve
+	Strange matter= strange matter+ strange matter earned
+
+	prestigeBonus = 1 + (prestige level * 0.01)
+
+	Current rocks= 0
+	reset buildings
+	reset upgrades
+	reset autoClickers
+
+	save  life time rocks to csv
+	save prestige level to csv
+	save strange matterto csv
+
+	reload game67
+end
+
+
+function calculateRps(baseRps)
+	totalRps = baseRps * prestigeBonus
+	return totalRps
+ end
