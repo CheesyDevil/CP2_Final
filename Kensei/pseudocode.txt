@@ -1,5 +1,5 @@
 import pygame
-Import pygame gui
+import pygame gui
 import csv
 import math
 		
