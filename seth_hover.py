@@ -8,44 +8,86 @@ screen = p.display.set_mode(res)
 width=screen.get_width()
 height=screen.get_height()
 
+color1=(100,100,100)
+color2=(170,170,170)
+color3=(0,0,0)
+color4=(255,255,255)
+
+desc_font=p.font.SysFont('Corbeal',35)
 def hover(mouse,counter, buildings,upgrades):
     #Buildings
     if width/12*7<=mouse[0]<=width/12*11 and height/12*11<=mouse[1]<=height:
-        if buildings[0].get_cost()<=counter:
-            buildings[0].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*11,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[0].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*10<=mouse[1]<=height/12*11:
-        if buildings[1].get_cost()<=counter:
-            buildings[1].purchase()    
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*10,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[1].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1])) 
     if width/12*7<=mouse[0]<=width/12*11 and height/12*9<=mouse[1]<=height/12*10:
-        if buildings[2].get_cost()<=counter:
-            buildings[2].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*9,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[2].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*8<=mouse[1]<=height/12*9:
-        if buildings[3].get_cost()<=counter:
-            buildings[3].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*8,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[3].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*7<=mouse[1]<=height/12*8:
-        if buildings[4].get_cost()<=counter:
-            buildings[4].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*7,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[4].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*6<=mouse[1]<=height/12*7:
-        if buildings[5].get_cost()<=counter:
-            buildings[5].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*6,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[5].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*5<=mouse[1]<=height/12*6:
-        if buildings[6].get_cost()<=counter:
-            buildings[6].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*5,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[6].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*4<=mouse[1]<=height/12*5:
-        if buildings[7].get_cost()<=counter:
-            buildings[7].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*4,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[7].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*3<=mouse[1]<=height/12*4:
-        if buildings[8].get_cost()<=counter:
-            buildings[8].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*3,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[8].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12*2<=mouse[1]<=height/12*3:
-        if buildings[9].get_cost()<=counter:
-            buildings[9].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12*2,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[9].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and height/12<=mouse[1]<=height/12*2:
-        if buildings[10].get_cost()<=counter:
-            buildings[10].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,height/12,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[10].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     if width/12*7<=mouse[0]<=width/12*11 and 0<=mouse[1]<=height/12:
-        if buildings[11].get_cost()<=counter:
-            buildings[11].purchase()
+        p.draw.rect(screen,color2,[width/12*7,width/3,0,height/12])
+        p.draw.rect(screen,color3,[mouse[0]-width/4,width/4,mouse[1],height/6])
+        text=buildings[11].description()
+        textbox=desc_font.render(text,True,color4)
+        screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     #building upgrades
     if width/12*11<=mouse[0]<=width and height/12*11<=mouse[1]<=height:
         if upgrades[0].get_cost()<=counter:
@@ -167,5 +209,5 @@ def hover(mouse,counter, buildings,upgrades):
         #prestige
         p.draw.rect(screen,color1,[width/6,width/12*5,height/12*11,height/12])
         #button click
-        p.draw.circle(screen,color1,())
+        p.draw.circle(screen,color1,[width/8*3,height/12*5],width/8)
         pass #button_click
