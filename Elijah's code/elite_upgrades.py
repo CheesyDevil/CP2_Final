@@ -27,3 +27,4 @@ class Upgrade:
 class ClickUpgrade(Upgrade):
     def __init__(self, name, base_cost, cost_multiplier, effect_multiplier):
         super().__init__(name, base_cost, cost_multiplier, effect_multiplier)
+        
