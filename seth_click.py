@@ -1,8 +1,3 @@
-class Button:
-    def __init__(self,x,y):
-        self.x=x
-        self.y=y
-
 import pygame as p
 import sys
 
