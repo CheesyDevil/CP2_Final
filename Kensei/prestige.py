@@ -5,7 +5,7 @@ import math
 def convert_lifetime_rocks_to_strange_matter(lifetime_rocks):
     #Conversion only happens when the player confirms prestige.
     return math.floor(
-        (lifetime_rocks / 1_000_000_000_000) ** (1 / 3)
+        (lifetime_rocks / 1000000000000) ** (1 / 3)
     )
 
 
