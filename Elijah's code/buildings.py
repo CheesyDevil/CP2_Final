@@ -7,10 +7,10 @@ from upgrade_logic import math_for_exponential_cost_increase
 buildings = [
     {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1},
     {"name": "Alien", "cost": 100, "rps": 1, "owned": False, "mult": 1},
-    {"name": "Small Mine", "cost": 1100, "rps": 8, "owned": False, "mult": 1},
-    {"name": "MASSIVE Mine", "cost": 12000, "rps": 47, "owned": False, "mult": 1},
+    {"name": "Grinder", "cost": 1100, "rps": 8, "owned": False, "mult": 1},
+    {"name": "Quarry", "cost": 12000, "rps": 47, "owned": False, "mult": 1},
     {"name": "Rock Factory", "cost": 130000, "rps": 260, "owned": False, "mult": 1},
-    {"name": "Portal to Asteroid", "cost": 10**6, "rps": 10000, "owned": False, "mult": 1},
+    {"name": "Asteroid Portal", "cost": 10**6, "rps": 10000, "owned": False, "mult": 1},
     {"name": "Time Machine", "cost": 14 * 10**12, "rps": 65 * 10**6, "owned": False, "mult": 1},
     {"name": "Quantum Drill", "cost": 1.4 * 10**15, "rps": 430 * 10**6, "owned": False, "mult": 1},
     {"name": "Alien Planet", "cost": 1.4 * 10**18, "rps": 2.9 * 10**9, "owned": False, "mult": 1},
