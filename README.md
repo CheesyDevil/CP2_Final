@@ -1,8 +1,8 @@
-# Miner Clicker
+# Rock Clicker
 ***
 ![Image of running project](relative to image in my repository)
 
-The Story: An asteroid hits aMerica!!! Your job as the president of the United States of America, you must extract as many precious resources as you can from it, also picking up some new companions on the way.
+The Story: An asteroid hits aMerica!!! Your job as the president of the United States of America, you must extract as many precious resources as you can from (Power-generating rock), also picking up some new companions on the way.
 
 
 At first, the player clicks on a large asteroid, earning one rock(minerals that generate large amounts of nuclear energy) per click.
@@ -24,13 +24,12 @@ After earning a certain number of cookies, the player can 'ascend', losing all t
 
 ## Installation Instructions
 ***
-How to install the exe (run file) for the project
+- First install pygame to 
 
 ## Contributors
-- List of people who worked on the project (use GitHub usernames)
-
-## License
-- Normally included here, but not applicable to school projects
+- CheesyDevil
+- kenhigashi-wq
+- Bruhster
 
 ## Contributions
-List of instructions about how someone else could contribute to the project
+Venomoe me money
