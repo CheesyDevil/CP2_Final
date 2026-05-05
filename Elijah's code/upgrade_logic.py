@@ -1,8 +1,6 @@
 
 import math
 
-from elite_upgrades import *
-
 def math_for_click_upgrade(level):
     return 1 + (0.5 * level)
 

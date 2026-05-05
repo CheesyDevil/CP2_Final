@@ -19,12 +19,6 @@ buildings = [
     {"name": "Multiverse", "cost": 1.4 * 10**27, "rps": 1 * 10**12, "owned": False, "mult": 1}
 ]
 
-base_building_upgrades = [
-    {"name": "Wood Pickaxe", "cost": 100, "target": 0, "req": 1, "bought": False},
-    {"name": "Forwards from Aliens", "cost": 1000, "target": 1, "req": 1, "bought": False},
-    {"name": "Bigger Equipment for Mines", "cost": 1.3 * 1100, "target": 4, "req": 1, "bought": False}
-]
-
 def buy_building(building_index, cookies, rps):
     building = buildings[building_index]
     if cookies >= building["cost"]:
