@@ -1,30 +1,37 @@
 #kh
 import math
 
-
+#function for converting the currencies and stuff
 def convert_lifetime_rocks_to_strange_matter(lifetime_rocks):
     #Conversion only happens when the player confirms prestige.
     return math.floor(
-        (lifetime_rocks / 1_000_000_000_000) ** (1 / 3)
+        (lifetime_rocks / 1000000000000) ** (1 / 3)#one trillion rocks equal one strange matter
     )
 
 
-
+#Make a class for prestige upgrading
 class PrestigeUpgrade:
+    #initialize stuff
     def __init__(self, upgrade_id, display_name, base_cost, cost_growth, effect_per_level):
-        self.upgrade_id = upgrade_id          #  identifier
+        self.upgrade_id = upgrade_id          # identifier
         self.display_name = display_name      # UI name
         self.level = 0
         self.base_cost = base_cost
         self.cost_growth = cost_growth
         self.effect_per_level = effect_per_level
 
+    #calsculate next level cost
     def cost_for_next_level(self):
         return self.base_cost + (self.level * self.cost_growth)
 
+    #ture or false to afford
     def can_afford(self, strange_matter):
-        return strange_matter >= self.cost_for_next_level()
+        if strange_matter >= self.cost_for_next_level():
+            return True
+        else:
+            return False
 
+    #IF PURCHASED ADD LLEVEL    
     def purchase(self):
         self.level += 1
 
@@ -78,14 +85,13 @@ class PrestigeShop:
         if not upgrade.can_afford(strange_matter):
             return False, strange_matter
 
-        cost = upgrade.cost_for_next_level()
+        cost = upgrade.cost_for_next_level() 
         upgrade.purchase()
         strange_matter -= cost
 
         return True, strange_matter
 
-
-#code game? elijah might made already
+"""#code game? elijah might made already
 
 class GameState:
     def __init__(self):
@@ -128,39 +134,39 @@ class GameState:
         self.current_rocks += rocks_gained
         self.lifetime_rocks += rocks_gained
 
-        return rocks_gained
+        return rocks_gained"""
 
 
-    def get_prestige_preview(self):
-        raw_strange_matter = convert_lifetime_rocks_to_strange_matter(
-            self.lifetime_rocks
-        )
+def get_prestige_preview(self):
+    raw_strange_matter = convert_lifetime_rocks_to_strange_matter(
+        self.lifetime_rocks
+    )
 
-        efficiency_multiplier = (
-            self.prestige_shop.upgrades["matter_efficiency"].multiplier()
-        )
+    efficiency_multiplier = (
+        self.prestige_shop.upgrades["matter_efficiency"].multiplier()
+    )
 
-        strange_matter_gained = math.floor(
-            raw_strange_matter * efficiency_multiplier
-        )
+    strange_matter_gained = math.floor(
+        raw_strange_matter * efficiency_multiplier
+    )
 
-        return {
-            "lifetime_rocks": self.lifetime_rocks,
-            "strange_matter_gained": strange_matter_gained
-        }
+    return {
+        "lifetime_rocks": self.lifetime_rocks,
+        "strange_matter_gained": strange_matter_gained
+    }
 
-    def confirm_prestige(self):
-        preview = self.get_prestige_preview()
-        strange_matter_gained = preview["strange_matter_gained"]
+def confirm_prestige(self):
+    preview = self.get_prestige_preview()
+    strange_matter_gained = preview["strange_matter_gained"]
 
-        if strange_matter_gained <= 0:
-            return False
+    if strange_matter_gained <= 0:
+        return False
 
-        # apply conversion
-        self.strange_matter += strange_matter_gained
+    # apply conversion
+    self.strange_matter += strange_matter_gained
 
-        # reset runspecific progress
-        self.current_rocks = 0
-        self.base_rocks_per_second = 1
+    # reset runspecific progress
+    self.current_rocks = 0
+    self.base_rocks_per_second = 1
 
-        return True
+    return True
