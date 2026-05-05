@@ -13,8 +13,8 @@ def convert_lifetime_rocks_to_strange_matter(lifetime_rocks):
 class PrestigeUpgrade:
     #initialize stuff
     def __init__(self, upgrade_id, display_name, base_cost, cost_growth, effect_per_level):
-        self.upgrade_id = upgrade_id          # identifier
-        self.display_name = display_name      # UI name
+        self.upgrade_id = upgrade_id# identifier
+        self.display_name = display_name# UI name
         self.level = 0
         self.base_cost = base_cost
         self.cost_growth = cost_growth
@@ -38,7 +38,7 @@ class PrestigeUpgrade:
     def multiplier(self):
         return 1 + (self.level * self.effect_per_level)
 
-
+#make a calss for prestige "shop"
 class PrestigeShop:
     def __init__(self):
         self.upgrades = {
@@ -79,6 +79,7 @@ class PrestigeShop:
             ),
         }
 
+    
     def purchase_upgrade(self, upgrade_id, strange_matter):
         upgrade = self.upgrades[upgrade_id]
 
@@ -136,7 +137,7 @@ class GameState:
 
         return rocks_gained"""
 
-
+#don't know if we need this
 def get_prestige_preview(self):
     raw_strange_matter = convert_lifetime_rocks_to_strange_matter(
         self.lifetime_rocks
