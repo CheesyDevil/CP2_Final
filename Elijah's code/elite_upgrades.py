@@ -76,9 +76,9 @@ insane_aliens_description = "Your aliens will now be more insane and productive!
 upgrade_stats = {
     "click": ("Click Upgrade", 10, 1.5, 0.5, click_description),
     "pickaxe": ("Pickaxe Upgrade", 100, 2, 0.5, pickaxe_description),
-    "Alien": ("Alien Upgrade", 1000, 2.5, 1, alien_description),
-    "Grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_description),
-    "Quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_description),
+    "alien": ("Alien Upgrade", 1000, 2.5, 1, alien_description),
+    "grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_description),
+    "quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_description),
     "rock_factory": ("Rock Factory Upgrade", 1300000, 4, 10, rock_factory_description),
     "asteroid_portal": ("Portal to Asteroid Upgrade", 10**6, 4.5, 20, asteroid_portal_description),
     "time_machine": ("Time Machine Upgrade", 14 * 10**12, 5, 50, time_machine_description),
@@ -91,18 +91,18 @@ upgrade_stats = {
 }
 
 regular_upgrades = {
-    "Acid": ("Acid Upgrade", 10**5, 2, 0.5, acid_description),
-    "Pickaxe Efficiency": ("Pickaxe Efficiency Upgrade", 10**6, 2.5, 0.5, pickaxe_efficiency_description),
-    "Pure Luck": ("Pure Luck Upgrade", 10**7, 3, 1, pure_luck_description),
-    "Miner's Intuition": ("Miner's Intuition Upgrade", 10**8, 3.5, 2, miners_intuition_description),
-    "Get a Foundry": ("Get a Foundry Upgrade", 10**9, 4, 5, get_a_foundry_description),
-    "Better Tools": ("Better Tools Upgrade", 10**10, 4.5, 10, better_tools_description),
-    "Mining Bullets": ("Mining Bullets Upgrade", 10**11, 5, 20, mining_bullets_description),
-    "Asteroid Mining": ("Asteroid Mining Upgrade", 10**12, 5, 50, asteroid_mining_description),
-    "Diamond Pickaxe": ("Diamond Pickaxe Upgrade", 10**13, 5.5, 100, diamond_pickaxe_description),
-    "Alien Technology": ("Alien Technology Upgrade", 10**14, 6, 200, alien_technology_description),
-    "Improved Solar Panels": ("Improved Solar Panels Upgrade", 10**15, 6.5, 500, improved_solar_panels_description),
-    "Insane Aliens": ("Insane Aliens Upgrade", 10**16, 7, 1000, insane_aliens_description)
+    "acid": ("Acid Upgrade", 10**5, 2, 0.5, acid_description),
+    "pickaxe efficiency": ("Pickaxe Efficiency Upgrade", 10**6, 2.5, 0.5, pickaxe_efficiency_description),
+    "pure luck": ("Pure Luck Upgrade", 10**7, 3, 1, pure_luck_description),
+    "miner's intuition": ("Miner's Intuition Upgrade", 10**8, 3.5, 2, miners_intuition_description),
+    "get a foundry": ("Get a Foundry Upgrade", 10**9, 4, 5, get_a_foundry_description),
+    "better tools": ("Better Tools Upgrade", 10**10, 4.5, 10, better_tools_description),
+    "mining bullets": ("Mining Bullets Upgrade", 10**11, 5, 20, mining_bullets_description),
+    "asteroid mining": ("Asteroid Mining Upgrade", 10**12, 5, 50, asteroid_mining_description),
+    "diamond pickaxe": ("Diamond Pickaxe Upgrade", 10**13, 5.5, 100, diamond_pickaxe_description),
+    "alien technology": ("Alien Technology Upgrade", 10**14, 6, 200, alien_technology_description),
+    "improved solar panels": ("Improved Solar Panels Upgrade", 10**15, 6.5, 500, improved_solar_panels_description),
+    "insane aliens": ("Insane Aliens Upgrade", 10**16, 7, 1000, insane_aliens_description)
 }
 
 def get_upgrade(key):
@@ -115,7 +115,7 @@ def get_upgrade(key):
         return [Upgrade(name, base_cost, cost_multiplier, effect_multiplier, description)]
         
     else:
-        raise ValueError("Invalid upgrade key")
+        raise ValueError("Invalid upgrade!")
 
 def get_all_upgrades():
     all_upgrades = []
@@ -133,7 +133,7 @@ def get_cost(upgrade_key):
         upgrade = get_upgrade(upgrade_key)[0]
         return upgrade.get_cost()
     else:
-        raise ValueError("Invalid upgrade key")
+        raise ValueError("Invalid upgrade!")
     
 def purchase_upgrade(upgrade_key, cookies):
     if upgrade_key in upgrade_stats:
@@ -144,9 +144,9 @@ def purchase_upgrade(upgrade_key, cookies):
             upgrade.purchase()
             return cookies, upgrade
         else:
-            raise ValueError("Not enough cookies to purchase this upgrade")
+            raise ValueError("Not enough rocks to purchase this upgrade")
     else:
-        raise ValueError("Invalid upgrade key")
+        raise ValueError("Invalid upgrade!")
     
 def get_effect():
     total_effect = 1
