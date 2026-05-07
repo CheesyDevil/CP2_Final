@@ -6,8 +6,23 @@ p.init()
 res=(720,720)
 screen = p.display.set_mode(res,p.RESIZABLE)
 
+
+
+
+
 width=screen.get_width()
 height=screen.get_height()
+
+def button_click(button_flat,button_mult,counter):
+    counter+=button_flat*button_mult
+    return counter
+
+
+button_flat=1
+button_mult=1
+
+
+
 
 def click(mouse,upgrades,counter, buildings):
     #Buildings
@@ -126,4 +141,4 @@ def click(mouse,upgrades,counter, buildings):
         pass #prestige
     #button click
     else:
-       pass #button_click
+       counter=button_click(button_flat,button_mult,counter) #button_click
