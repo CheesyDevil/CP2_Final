@@ -2,7 +2,24 @@ cookies = 0
 rps = 0
 click_multiplier = 1
 
-from upgrade_logic import math_for_exponential_cost_increase
+from upgrade_logic import *
+
+class Building:
+    def __init__(self, name, cost, rps, owned=False, mult=1, description=""):
+        self.name = name
+        self.cost = cost
+        self.rps = rps
+        self.owned = owned
+        self.mult = mult
+        self.description = description
+
+    def purchase(self):
+        if cookies >= self.cost:
+            global cookies, rps
+            cookies -= self.cost
+            self.owned += 1
+            rps += self.rps * self.mult
+            self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
 
 buildings = [
     {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1},
