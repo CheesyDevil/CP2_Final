@@ -22,7 +22,6 @@ class Building:
             self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
 
 buildings = [
-    {"name": "Auto Clicker", "cost": 0, "rps": 0.01, "owned": True, "mult": 1},
     {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1},
     {"name": "Alien", "cost": 100, "rps": 1, "owned": False, "mult": 1},
     {"name": "Grinder", "cost": 1100, "rps": 8, "owned": False, "mult": 1},
