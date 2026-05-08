@@ -113,22 +113,7 @@ def get_upgrade(key):
 
 def get_all_upgrades():
     all_upgrades = []
-    for key in upgrade_stats:
-        all_upgrades.append(get_upgrade(key)[0])
-    for key in regular_upgrades:
-        all_upgrades.append(get_upgrade(key)[0])
-    return all_upgrades
-
-def get_cost(upgrade_key):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    elif upgrade_key in regular_upgrades:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    else:
-        raise ValueError("Invalid upgrade!")
-    
+    for key in upgrade_
 def purchase_upgrade(upgrade_key, cookies):
     if upgrade_key in upgrade_stats:
         upgrade = get_upgrade(upgrade_key)[0]
