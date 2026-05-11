@@ -6,7 +6,7 @@ import math
 
 pygame.init()
 
-# Window
+# Windoww
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Miner Clicker MVP")
@@ -50,7 +50,7 @@ def load_game():
 
 load_game()
 
-]
+
 
 def get_pickaxe_cost():
     return int(pickaxe_base_cost * (pickaxe_cost_multiplier ** pickaxe_count))
