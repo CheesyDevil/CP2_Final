@@ -116,8 +116,8 @@ def get_upgrade(key):
 
 def get_all_upgrades():
     all_upgrades = []
-    with open("Elijah's code/upgrades.csv", "r") as f:
-        with open("Elijah's code/building_upgrades.csv", "r") as f2:
+    with open("Elijah/upgrade.csv", "r") as f:
+        with open("Elijah's/building_upgrades.csv", "r") as f2:
             reader = csv.DictReader(f)
             reader_2 = csv.DictReader(f2)
             for row in reader:
@@ -135,7 +135,7 @@ def get_all_upgrades():
         return all_upgrades
     
 def get_buildings():
-    with open("Elijah's code/buildings.csv", "r") as f:
+    with open("Elijah/building.csv", "r") as f:
         reader3 = csv.DictReader(f)
         buildings = []
         for row in reader3:
