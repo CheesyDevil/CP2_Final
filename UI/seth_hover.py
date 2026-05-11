@@ -39,7 +39,7 @@ def hover(mouse,counter,buildings,upgrades):
         if width/12*7<=mouse[0]<=width/12*11 and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
             p.draw.rect(screen,color2,[width/12*7,0,width/3,height/12])
             p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
-            text=buildings[i].description
+            text=f"{buildings[i].getcost()}\n{buildings[i].description}"
             textbox=desc_font.render(text,True,color4)
             screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
     #building upgrades
