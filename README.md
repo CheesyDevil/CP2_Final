@@ -9,13 +9,13 @@ At first, the player clicks on a large asteroid, earning one rock(minerals that 
 With these rocks, the player can buy additional means of production such as cursors, grandmas, farms, mines, factories, banks, temples, and 14 more that automatically generate rocks. Prices increase exponentially, with each asset costing 15% more than the last-purchased asset of the same type. 
 The player may also purchase upgrades to increase cookie production for these buildings. Golden rocks, small rocks that appear in random locations and fade away after several seconds, appear periodically and grant effects, such as a temporary increase in the rate of production, if clicked before they disappear.
 
-After earning a certain number of rocks, the player can 'ascend', losing all their progress but earning strangte matter and prestige levels. Prestige levels add a permanent boost (+1% per level) to the rate of cookie production in future playthroughs, while strange matter can be spent on a wide variety of prestige upgrades. However, the number of rocks needed to unlock the next prestige level goes up proportionally with the cube of the level, becoming harder to attain as more are acquired.
+After earning a certain number of rocks, the player can 'ascend', losing all their progress but earning strange matter and prestige levels. Prestige levels add a permanent boost (+1% per level) to the rate of cookie production in future playthroughs, while strange matter can be spent on a wide variety of prestige upgrades. However, the number of rocks needed to unlock the next prestige level goes up proportionally with the cube of the level, becoming harder to attain as more are acquired.
 
 ## How to use the Project
 ***
-1. Numbered list
-2. Tells the user the steps to use the project
-3. INCLUDING any external libraries that need to be installed 
+1. Click the rock
+2. Buy upgrades
+3. Try to collect as many rocks as possible
 
 ## List of Key Features
 ***
@@ -24,12 +24,11 @@ After earning a certain number of rocks, the player can 'ascend', losing all the
 
 ## Installation Instructions
 ***
-- First install pygame to 
+- First, install Pygame. Copy and paste this into a new terminal: pip install pygame
+- Install Python too by the way
 
 ## Contributors
 - CheesyDevil
 - kenhigashi-wq
 - Bruhster
 
-## Contributions
-Venomoe me money
