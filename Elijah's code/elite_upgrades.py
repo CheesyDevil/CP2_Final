@@ -2,6 +2,8 @@
 #bruh
 import math
 
+import csv
+
 from buildings import *
 
 class Upgrade:
@@ -114,11 +116,32 @@ def get_upgrade(key):
 
 def get_all_upgrades():
     all_upgrades = []
-    for key in upgrade_stats:
-        all_upgrades.append(get_upgrade(key)[0])
-    for key in regular_upgrades:
-        all_upgrades.append(get_upgrade(key)[0])
-    return all_upgrades
+    with open("Elijah's code/upgrades.csv", "r") as f:
+        with open("Elijah's code/building_upgrades.csv", "r") as f2:
+            reader = csv.DictReader(f)
+            reader_2 = csv.DictReader(f2)
+            for row in reader:
+                key = row["Key"]
+                if key in upgrade_stats:
+                    all_upgrades.append(get_upgrade(key)[0])
+                elif key in regular_upgrades:
+                    all_upgrades.append(get_upgrade(key)[0])
+            for row in reader_2:
+                key = row["Key"]
+                if key in upgrade_stats:
+                    all_upgrades.append(get_upgrade(key)[0])
+                elif key in regular_upgrades:
+                    all_upgrades.append(get_upgrade(key)[0])
+        return all_upgrades
+    
+def get_buildings():
+    with open("Elijah's code/buildings.csv", "r") as f:
+        reader3 = csv.DictReader(f)
+        buildings = []
+        for row in reader3:
+            building = Building(row["Name"], float(row["Cost"]), float(row["RPS"]), False, 1, row["Description"])
+            buildings.append(building)
+        return buildings
 
 def get_cost(upgrade_key):
     if upgrade_key in upgrade_stats:
