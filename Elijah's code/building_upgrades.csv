@@ -1,0 +1,13 @@
+Key,Name,Cost,Multiplier,Bonus,Description Variable
+pickaxe,Pickaxe Upgrade,75,2,0.5,pickaxe_upgrade_description
+alien,Alien Upgrade,1000,2.5,1,alien_upgrade_description
+grinder,Grinder Upgrade,11000,3,2,grinder_upgrade_description
+quarry,Massive Mine Upgrade,120000,3.5,5,quarry_upgrade_description
+rock_factory,Rock Factory Upgrade,1300000,4,10,rock_factory_upgrade_description
+asteroid_portal,Portal to Asteroid Upgrade,1000000,4.5,20,asteroid_portal_upgrade_description
+time_machine,Time Machine Upgrade,14000000000000,5,50,time_machine_upgrade_description
+quantum_drill,Quantum Drill Upgrade,1400000000000000,5.5,100,quantum_drill_upgrade_description
+alien_planet,Alien Planet Upgrade,1400000000000000000,6,200,alien_planet_upgrade_description
+dyson_sphere,Dyson Sphere Upgrade,1400000000000000000000,6.5,500,dyson_sphere_upgrade_description
+galaxy_cluster,Galaxy Cluster Upgrade,1400000000000000000000000,7,1000,galaxy_cluster_upgrade_description
+multiverse,Multiverse Upgrade,1400000000000000000000000000,7.5,2000,multiverse_upgrade_description
