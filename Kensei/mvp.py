@@ -7,8 +7,8 @@ import math
 pygame.init()
 
 # Windoww
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+width, height = 800, 600
+screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Miner Clicker MVP")
 
 font = pygame.font.SysFont(None, 30)
@@ -20,7 +20,7 @@ clock = pygame.time.Clock()
 rocks = 0
 click_power = 1
 
-# Simple building
+# simpppppppppp
 pickaxe_count = 0
 pickaxe_base_cost = 50
 pickaxe_cost_multiplier = 1.15
@@ -30,18 +30,18 @@ upgrade_level = 0
 upgrade_base_cost = 200
 
 
-SAVE_FILE = "save.csv"
+save_file = "save.csv"
 
 def save_game():
-    with open(SAVE_FILE, "w", newline="") as f:
+    with open(save_file, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["rocks", "pickaxes", "upgrade_level"])
         writer.writerow([rocks, pickaxe_count, upgrade_level])
 
 def load_game():
     global rocks, pickaxe_count, upgrade_level
-    if os.path.exists(SAVE_FILE):
-        with open(SAVE_FILE, "r") as f:
+    if os.path.exists(save_file):
+        with open(save_file, "r") as f:
             reader = list(csv.reader(f))
             if len(reader) > 1:
                 rocks = float(reader[1][0])
