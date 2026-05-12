@@ -1,0 +1,13 @@
+Key,Name,Cost,Multiplier,Bonus,Description Variable
+acid,Acid Upgrade,100000,2,0.5,acid_description
+oddly sharp shovels,Oddly Sharp Shovels Upgrade,1000000,2.5,0.5,oddly_sharp_shovels_description
+pure luck,Pure Luck Upgrade,10000000,3,1,pure_luck_description
+miner's intuition,Miner's Intuition Upgrade,100000000,3.5,2,miners_intuition_description
+get a foundry,Get a Foundry Upgrade,1000000000,4,5,get_a_foundry_description
+better tools,Better Tools Upgrade,10000000000,4.5,10,better_tools_description
+mining bullets,Mining Bullets Upgrade,100000000000,5,20,mining_bullets_description
+asteroid mining,Asteroid Mining Upgrade,1000000000000,5,50,asteroid_mining_description
+MASSIVE Dumptruck,MASSIVE Dumptruck Upgrade,10000000000000,5.5,100,massive_dumptruck_description
+alien technology,Alien Technology Upgrade,100000000000000,6,200,alien_technology_description
+improved solar panels,Improved Solar Panels Upgrade,1000000000000000,6.5,500,improved_solar_panels_description
+insane aliens,Insane Aliens Upgrade,10000000000000000,7,1000,insane_aliens_description
