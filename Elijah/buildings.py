@@ -2,6 +2,8 @@ cookies = 0
 rps = 0
 click_multiplier = 1
 
+import csv
+
 from upgrade_logic import *
 
 class Building:
@@ -62,10 +64,17 @@ buildings = [
 ]
 
 def buy_building(building_index, cookies, rps):
-    building = buildings[building_index]
-    if cookies >= building["cost"]:
-        cookies -= building["cost"]
-        building["owned"] += 1
-        rps += building["rps"] * building["mult"]
-        building["cost"] = math_for_exponential_cost_increase(building["cost"], 1.15, 1)
+    with open('buildings.csv', 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            if row[0] == buildings[building_index]["name"]:
+                building = Building(row[0], float(row[1]), float(row[2]), bool(int(row[3])), float(row[4]), row[5])
+                building.purchase()
+                cookies -= building.cost
+                rps += building.rps * building.mult
+            if row[1] <= cookies:
+                cookies -= float(row[1])
+                rps += float(row[2]) * float(row[4])
+            elif cookies < float(row[1]):
+                break
     return cookies, rps
