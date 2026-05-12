@@ -15,14 +15,13 @@ class Building:
         self.mult = mult
         self.description = description
 
-    def purchase(self):
+    def purchase(self, cookies, rps):
         if cookies >= self.cost:
-            global cookies, rps
             cookies -= self.cost
             self.owned += 1
             rps += self.rps * self.mult
             self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
-
+        return cookies, rps
 
 pickaxe_description = "A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
 
