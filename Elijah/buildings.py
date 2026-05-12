@@ -63,18 +63,7 @@ buildings = [
     {"name": "Multiverse", "cost": 1.4 * 10**27, "rps": 1 * 10**12, "owned": False, "mult": 1, "description": multiverse_description}
 ]
 
-def buy_building(building_index, cookies, rps):
-    with open('buildings.csv', 'r', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            if row[0] == buildings[building_index]["name"]:
-                building = Building(row[0], float(row[1]), float(row[2]), bool(int(row[3])), float(row[4]), row[5])
-                building.purchase()
-                cookies -= building.cost
-                rps += building.rps * building.mult
-            if row[1] <= cookies:
-                cookies -= float(row[1])
-                rps += float(row[2]) * float(row[4])
-            elif cookies < float(row[1]):
-                break
-    return cookies, rps
+def get_buildings():
+    with open('buildings.csv', mode='r') as file:
+        reader = csv.DictReader(file)
+        return [Building(row['name'], float(row['cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']) for row in reader]
