@@ -4,7 +4,7 @@ import math
 
 import csv
 
-from buildings import *
+from Elijah.upgrade_logic import *
 
 class Upgrade:
     def __init__(self, name, base_cost, cost_multiplier, effect_multiplier, description=""):
@@ -23,6 +23,21 @@ class Upgrade:
 
     def purchase(self):
         self.level += 1
+
+class Building:
+    def __init__(self, name, cost, rps, owned=False, mult=1, description=""):
+        self.name = name
+        self.cost = cost
+        self.rps = rps
+        self.owned = owned
+        self.mult = mult
+        self.description = description
+
+    def purchase(self,cookies):
+        if cookies >= self.cost:
+            cookies -= self.cost
+            self.owned += 1
+            self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
 
 pickaxe_upgrade_description = "Increases the speed of your Pickaxes! Increases the multiplier for the Pickaxe building by 0.5 for each level of this upgrade. The cost of this upgrade doubles with each purchase."
 
@@ -73,18 +88,18 @@ improved_solar_panels_description = "Your solar panels will now be more efficien
 insane_aliens_description = "Your aliens will now be more insane and productive! Increases the multiplier for all buildings by 1000 for each level of this upgrade. The cost of this upgrade increases by 1050% with each purchase."
 
 upgrade_stats = {
-    "pickaxe": ("Pickaxe Upgrade", 75, 2, 0.5, pickaxe_description),
-    "alien": ("Alien Upgrade", 1000, 2.5, 1, alien_description),
-    "grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_description),
-    "quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_description),
-    "rock_factory": ("Rock Factory Upgrade", 1300000, 4, 10, rock_factory_description),
-    "asteroid_portal": ("Portal to Asteroid Upgrade", 10**6, 4.5, 20, asteroid_portal_description),
-    "time_machine": ("Time Machine Upgrade", 14 * 10**12, 5, 50, time_machine_description),
-    "quantum_drill": ("Quantum Drill Upgrade", 1.4 * 10**15, 5.5, 100, quantum_drill_description),
-    "alien_planet": ("Alien Planet Upgrade", 1.4 * 10**18, 6, 200, alien_planet_description),
-    "dyson_sphere": ("Dyson Sphere Upgrade", 1.4 * 10**21, 6.5, 500, dyson_sphere_description),
-    "galaxy_cluster": ("Galaxy Cluster Upgrade", 1.4 * 10**24, 7, 1000, galaxy_cluster_description),
-    "multiverse": ("Multiverse Upgrade", 1.4 * 10**27, 7.5, 2000, multiverse_description)
+    "pickaxe": ("Pickaxe Upgrade", 75, 2, 0.5, pickaxe_upgrade_description),
+    "alien": ("Alien Upgrade", 1000, 2.5, 1, alien_upgrade_description),
+    "grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_upgrade_description),
+    "quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_upgrade_description),
+    "rock_factory": ("Rock Factory Upgrade", 1300000, 4, 10, rock_factory_upgrade_description),
+    "asteroid_portal": ("Portal to Asteroid Upgrade", 10**6, 4.5, 20, asteroid_portal_upgrade_description),
+    "time_machine": ("Time Machine Upgrade", 14 * 10**12, 5, 50, time_machine_upgrade_description),
+    "quantum_drill": ("Quantum Drill Upgrade", 1.4 * 10**15, 5.5, 100, quantum_drill_upgrade_description),
+    "alien_planet": ("Alien Planet Upgrade", 1.4 * 10**18, 6, 200, alien_planet_upgrade_description),
+    "dyson_sphere": ("Dyson Sphere Upgrade", 1.4 * 10**21, 6.5, 500, dyson_sphere_upgrade_description),
+    "galaxy_cluster": ("Galaxy Cluster Upgrade", 1.4 * 10**24, 7, 1000, galaxy_cluster_upgrade_description),
+    "multiverse": ("Multiverse Upgrade", 1.4 * 10**27, 7.5, 2000, multiverse_upgrade_description)
 }
 
 regular_upgrades = {
@@ -117,7 +132,7 @@ def get_upgrade(key):
 def get_all_upgrades():
     all_upgrades = []
     with open("Elijah/upgrade.csv", "r") as f:
-        with open("Elijah's/building_upgrades.csv", "r") as f2:
+        with open("Elijah/building_upgrades.csv", "r") as f2:
             reader = csv.DictReader(f)
             reader_2 = csv.DictReader(f2)
             for row in reader:
@@ -134,48 +149,3 @@ def get_all_upgrades():
                     all_upgrades.append(get_upgrade(key)[0])
         return all_upgrades
     
-def get_buildings():
-    with open("Elijah/building.csv", "r") as f:
-        reader3 = csv.DictReader(f)
-        buildings = []
-        for row in reader3:
-            building = Building(row["Name"], float(row["Cost"]), float(row["RPS"]), False, 1, row["Description"])
-            buildings.append(building)
-        return buildings
-
-def get_cost(upgrade_key):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    elif upgrade_key in regular_upgrades:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    else:
-        raise ValueError("Invalid upgrade!")
-    
-def purchase_upgrade(upgrade_key, cookies):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        cost = upgrade.get_cost()
-        if cookies >= cost:
-            cookies -= cost
-            upgrade.purchase()
-            return cookies, upgrade
-        else:
-            raise ValueError("Not enough rocks to purchase this upgrade")
-    else:
-        raise ValueError("Invalid upgrade!")
-    
-def get_effect():
-    total_effect = 1
-    for upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        total_effect *= upgrade.get_effect()
-    return total_effect
-
-def upgrade_building(building_index, upgrade_key):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)
-        building = buildings[building_index]
-        building["mult"] += upgrade.get_effect()
-        upgrade.purchase_upgrade()
