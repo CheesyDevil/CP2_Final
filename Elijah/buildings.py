@@ -63,7 +63,8 @@ buildings = [
     {"name": "Multiverse", "cost": 1.4 * 10**27, "rps": 1 * 10**12, "owned": False, "mult": 1, "description": multiverse_description}
 ]
 
-def get_buildings():
-    with open('buildings.csv', mode='r') as file:
+def get_all_buildings():
+    with open('buildings.csv', 'r', newline='') as file:
         reader = csv.DictReader(file)
-        return [Building(row['name'], float(row['cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']) for row in reader]
+        for i in reader:
+            return [Building(row['name'], float(row['cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']) for row in reader]
