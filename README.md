@@ -11,7 +11,7 @@ The player may also purchase upgrades to increase cookie production for these bu
 
 After earning a certain number of rocks, the player can 'ascend', losing all their progress but earning strange matter and prestige levels. Prestige levels add a permanent boost (+1% per level) to the rate of cookie production in future playthroughs, while strange matter can be spent on a wide variety of prestige upgrades. However, the number of rocks needed to unlock the next prestige level goes up proportionally with the cube of the level, becoming harder to attain as more are acquired.
 
-## How to use the Project
+## How to use Play the Game
 ***
 1. Click the rock
 2. Buy upgrades
@@ -19,13 +19,18 @@ After earning a certain number of rocks, the player can 'ascend', losing all the
 
 ## List of Key Features
 ***
-- List all important things that the project does (includes a description of each feature)
--lists often include emojis
+- Button to push
+- Fun ahh Story
 
 ## Installation Instructions
 ***
+- Open a new terminal
 - First, install Pygame. Copy and paste this into a new terminal: pip install pygame
-- Install Python too by the way
+- Install Python, too, by the way
+- Make sure you have access to time, math, and CSV modules
+- Press the triangle play button
+- Enjoy
+
 
 ## Contributors
 - CheesyDevil
