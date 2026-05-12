@@ -28,7 +28,7 @@ def load_image(image,coords,scale):
         pass
 
 def rounding(number):
-	length=len(int(number))
+	length=len(str(int(number)))
 	index=(length-1)//3
 	letters=["   ",'K  ','M  ','B  ', 'T  ','Qu ','Qi ','Sx ','Sp ','Oc ','Nv ', 'Dc ', 'UnD']
 	letter=letters[index]
@@ -42,7 +42,7 @@ def hover(mouse,counter,buildings,upgrades):
         if width/12*7<=mouse[0]<=width/12*11 and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
             p.draw.rect(screen,color2,[width/12*7,height/12*i,width/3,height/12])
             p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
-            text=f"{buildings[i].getcost()}\n{buildings[i].description}"
+            text=f"{buildings[i].cost}\n{buildings[i].description}"
             textbox=desc_font.render(text,True,color4)
             screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
             load_image(buildings[i].image,(width/12*7,height/12*i),(width/12,height/12))
@@ -79,11 +79,10 @@ def hover(mouse,counter,buildings,upgrades):
         #prestige
         p.draw.rect(screen,color1,[width/6,0,width/12*5,height/12])
         #button click
-        load_image("asteroid.png",(width/4,height/12*7),(width/4,height/4))
+        load_image("GUI\pngaaa.com-53237.png",(width/4,height/12*7),(width/4,height/4))
         p.draw.rect(screen,color1,[width/4,height/12*7,width/4,height/4])
         pass #button_click
     #Counter
-
-    c_text=rounding(counter)
-    c_box=coun_font.render(c_text,True,color4)
-    screen.blit(c_box,(width/6,height/12*11))
+    rnumber=rounding(counter)
+    countbox=desc_font.render(rnumber,True,color4)
+    screen.blit(countbox,[width/6,height/12,width/12*5,height/12])
