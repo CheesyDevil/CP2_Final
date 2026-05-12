@@ -15,9 +15,9 @@ class Building:
         self.mult = mult
         self.description = description
 
-    def purchase(self):
+    def purchase(self,cookies):
         if cookies >= self.cost:
-            global cookies, rps
+            global  rps
             cookies -= self.cost
             self.owned += 1
             rps += self.rps * self.mult
@@ -66,5 +66,7 @@ buildings = [
 def get_all_buildings():
     with open('buildings.csv', 'r', newline='') as file:
         reader = csv.DictReader(file)
-        for i in reader:
-            return [Building(row['name'], float(row['cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']) for row in reader]
+        buildings=[]
+        for row in reader:
+            buildings.append(Building(row['name'], float(row[' cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']))
+        return buildings

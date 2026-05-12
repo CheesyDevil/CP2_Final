@@ -15,8 +15,8 @@ def start_rock_generation(cookies, rps):
     rock_generation_process.start()
 
 def update_rock_generation(rps, upgrades, buildings):
-    for i in buildings:
-        rps+=(buildings[i].rps*upgrades[i]*buildings[i].owned)
+    for i in range(0,12):
+        rps+=(buildings[i].rps*(1+upgrades[i].effect_multiplier)*buildings[i].owned)
     for i in range(0,12):
         rps=rps*(1+upgrades[i+12].effect_multiplier)
     return rps

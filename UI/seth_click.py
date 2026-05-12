@@ -29,7 +29,7 @@ def click(mouse,upgrades,counter, buildings,button_mult):
     #Buildings
     for i in range(0,12):
         if width/12*7<=mouse[0]<=width/12*11 and height/12*(12-(i+1))<=mouse[1]<=height/12*(12-i):
-            if buildings[i].get_cost()<=counter:
+            if buildings[i].cost()<=counter:
                 buildings[i].purchase()
     #building upgrades
     for i in range(0,12):
