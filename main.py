@@ -11,17 +11,18 @@ def main():
 
     rps=0
     counter=0
-    while True:
+    while running:
         upgrades=e.get_all_upgrades()
         buildings=e.get_all_buildings()
         mouse=p.mouse.get_pos()
         for ev in p.event.get():
             if ev.type==p.MOUSEBUTTONDOWN:
                 c.click(mouse,upgrades,counter,buildings,button_mult=1)
-        
-        h.hover(mouse,counter,buildings,upgrades)
+            if ev.type==p.QUIT:
+                running=False
         r.update_rock_generation(rps,upgrades,buildings)
         counter=r.generate_rocks(counter,rps)
+        h.hover(mouse,counter,buildings,upgrades)
         p.display.update()
 
 
