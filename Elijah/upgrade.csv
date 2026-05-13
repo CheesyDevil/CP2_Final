@@ -1,4 +1,4 @@
-Key,Name,Cost,Multiplier,Bonus,Description Variable
+Key,Name,Cost,Multiplier,Bonus,Description
 acid,Acid Upgrade,100000,2,0.5,acid_description
 oddly sharp shovels,Oddly Sharp Shovels Upgrade,1000000,2.5,0.5,oddly_sharp_shovels_description
 pure luck,Pure Luck Upgrade,10000000,3,1,pure_luck_description
