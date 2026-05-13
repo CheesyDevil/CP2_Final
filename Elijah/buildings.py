@@ -22,7 +22,7 @@ class Building:
             self.owned += 1
             rps += self.rps * self.mult
             self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
-
+        return cookies, rps
 
 pickaxe_description = "A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
 

@@ -191,10 +191,19 @@ def get_all_upgrades():
         return all_upgrades
     
 def get_all_buildings():
-    with open('Elijah\\building.csv', 'r', newline='') as file:
+    buildings = []
+    with open('Elijah/building.csv', 'r', newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file)
-        buildings=[]
+        
         for row in reader:
-            buildings.append(Building(row['name'], float(row[' cost']), float(row[' rps']), row[' owned'] == 'True', float(row[' multiplier']), row[' description variable']))
-        return buildings
-    
+            row = {k.strip(): v for k, v in row.items() if k is not None}
+            
+            buildings.append(Building(
+                row['name'], 
+                float(row['cost']), 
+                float(row['rps']), 
+                row['owned'].strip() == 'True', 
+                float(row['multiplier']), 
+                row['description variable']
+            ))
+    return buildings
