@@ -17,10 +17,10 @@ class Upgrade:
         self.image=image
 
     def get_cost(self):
-        return math.ceil(self.base_cost * (self.cost_multiplier ** self.level))
+        self.base_cost=math.ceil(self.base_cost * (self.cost_multiplier ** self.level))
 
     def get_effect(self):
-        return 1 + (self.effect_multiplier * self.level)
+        self.effect_multiplier=1 + (self.effect_multiplier * self.level)
 
     def purchase(self):
         self.level += 1
