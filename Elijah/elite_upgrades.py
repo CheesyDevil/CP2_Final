@@ -4,16 +4,17 @@ import math
 
 import csv
 
-from buildings import *
+from Elijah.upgrade_logic import *
 
 class Upgrade:
-    def __init__(self, name, base_cost, cost_multiplier, effect_multiplier, description=""):
+    def __init__(self, name, base_cost, cost_multiplier, effect_multiplier, description="",image=""):
         self.name = name
         self.base_cost = base_cost
         self.cost_multiplier = cost_multiplier
         self.effect_multiplier = effect_multiplier
         self.level = 0
         self.description = description
+        self.image=image
 
     def get_cost(self):
         return math.ceil(self.base_cost * (self.cost_multiplier ** self.level))
@@ -23,6 +24,22 @@ class Upgrade:
 
     def purchase(self):
         self.level += 1
+
+class Building:
+    def __init__(self, name, cost, rps, owned=False, mult=1, description="",image=""):
+        self.name = name
+        self.cost = cost
+        self.rps = rps
+        self.owned = owned
+        self.mult = mult
+        self.description = description
+        self.image=image
+
+    def purchase(self,cookies):
+        if cookies >= self.cost:
+            cookies -= self.cost
+            self.owned += 1
+            self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
 
 pickaxe_upgrade_description = "Increases the speed of your Pickaxes! Increases the multiplier for the Pickaxe building by 0.5 for each level of this upgrade. The cost of this upgrade doubles with each purchase."
 
@@ -72,19 +89,58 @@ improved_solar_panels_description = "Your solar panels will now be more efficien
 
 insane_aliens_description = "Your aliens will now be more insane and productive! Increases the multiplier for all buildings by 1000 for each level of this upgrade. The cost of this upgrade increases by 1050% with each purchase."
 
+pickaxe_description = "A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
+
+alien_description = "A friendly alien that helps you mine rocks! Increases RPS by 1."
+
+grinder_description = "A powerful grinder that can crush rocks into dust for easier processing! Increases RPS by 8."
+
+quarry_description = "A large quarry that can extract rocks from deep in the asteroid's ground! Increases RPS by 47."
+
+rock_factory_description = "A factory that can mass-produce rocks for you! Increases RPS by 260."
+
+asteroid_portal_description = "A portal that allows you to access asteroids in other parts of the universe! Increases RPS by 10,000."
+
+time_machine_description = "Takes you back in time to mine more rocks from the past and future! Increases RPS by 65 million."
+
+quantum_drill_description = "A drill that uses quantum mechanics to mine rocks at an incredible speed, and also be in multiple places at once! Increases RPS by 430 million."
+
+alien_planet_description = "A planet inhabited by friendly aliens who help you mine alien minerals! Increases RPS by 2.9 billion."
+
+dyson_sphere_description = "A megastructure that surrounds a star and captures its energy to mine rocks! Increases RPS by 20 billion."
+
+galaxy_cluster_description = "Now you can mine rocks from multiple different galaxies! Increases RPS by 140 billion."
+
+multiverse_description = "You can now mine rocks from multiple universes at once! Increases RPS by 1 trillion."
+
+buildings = [
+    {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1, "description": pickaxe_description},
+    {"name": "Alien", "cost": 100, "rps": 1, "owned": False, "mult": 1, "description": alien_description},
+    {"name": "Grinder", "cost": 1100, "rps": 8, "owned": False, "mult": 1, "description": grinder_description},
+    {"name": "Quarry", "cost": 12000, "rps": 47, "owned": False, "mult": 1, "description": quarry_description},
+    {"name": "Rock Factory", "cost": 130000, "rps": 260, "owned": False, "mult": 1, "description": rock_factory_description},
+    {"name": "Asteroid Portal", "cost": 10**6, "rps": 10000, "owned": False, "mult": 1, "description": asteroid_portal_description},
+    {"name": "Time Machine", "cost": 14 * 10**12, "rps": 65 * 10**6, "owned": False, "mult": 1, "description": time_machine_description},
+    {"name": "Quantum Drill", "cost": 1.4 * 10**15, "rps": 430 * 10**6, "owned": False, "mult": 1, "description": quantum_drill_description},
+    {"name": "Alien Planet", "cost": 1.4 * 10**18, "rps": 2.9 * 10**9, "owned": False, "mult": 1, "description": alien_planet_description},
+    {"name": "Dyson Sphere", "cost": 1.4 * 10**21, "rps": 20 * 10**9, "owned": False, "mult": 1, "description": dyson_sphere_description},
+    {"name": "Galaxy Cluster", "cost": 1.4 * 10**24, "rps": 140 * 10**9, "owned": False, "mult": 1, "description": galaxy_cluster_description},
+    {"name": "Multiverse", "cost": 1.4 * 10**27, "rps": 1 * 10**12, "owned": False, "mult": 1, "description": multiverse_description}
+]
+
 upgrade_stats = {
-    "pickaxe": ("Pickaxe Upgrade", 75, 2, 0.5, pickaxe_description),
-    "alien": ("Alien Upgrade", 1000, 2.5, 1, alien_description),
-    "grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_description),
-    "quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_description),
-    "rock_factory": ("Rock Factory Upgrade", 1300000, 4, 10, rock_factory_description),
-    "asteroid_portal": ("Portal to Asteroid Upgrade", 10**6, 4.5, 20, asteroid_portal_description),
-    "time_machine": ("Time Machine Upgrade", 14 * 10**12, 5, 50, time_machine_description),
-    "quantum_drill": ("Quantum Drill Upgrade", 1.4 * 10**15, 5.5, 100, quantum_drill_description),
-    "alien_planet": ("Alien Planet Upgrade", 1.4 * 10**18, 6, 200, alien_planet_description),
-    "dyson_sphere": ("Dyson Sphere Upgrade", 1.4 * 10**21, 6.5, 500, dyson_sphere_description),
-    "galaxy_cluster": ("Galaxy Cluster Upgrade", 1.4 * 10**24, 7, 1000, galaxy_cluster_description),
-    "multiverse": ("Multiverse Upgrade", 1.4 * 10**27, 7.5, 2000, multiverse_description)
+    "pickaxe": ("Pickaxe Upgrade", 75, 2, 0.5, pickaxe_upgrade_description),
+    "alien": ("Alien Upgrade", 1000, 2.5, 1, alien_upgrade_description),
+    "grinder": ("Grinder Upgrade", 11000, 3, 2, grinder_upgrade_description),
+    "quarry": ("Massive Mine Upgrade", 120000, 3.5, 5, quarry_upgrade_description),
+    "rock_factory": ("Rock Factory Upgrade", 1300000, 4, 10, rock_factory_upgrade_description),
+    "asteroid_portal": ("Portal to Asteroid Upgrade", 10**6, 4.5, 20, asteroid_portal_upgrade_description),
+    "time_machine": ("Time Machine Upgrade", 14 * 10**12, 5, 50, time_machine_upgrade_description),
+    "quantum_drill": ("Quantum Drill Upgrade", 1.4 * 10**15, 5.5, 100, quantum_drill_upgrade_description),
+    "alien_planet": ("Alien Planet Upgrade", 1.4 * 10**18, 6, 200, alien_planet_upgrade_description),
+    "dyson_sphere": ("Dyson Sphere Upgrade", 1.4 * 10**21, 6.5, 500, dyson_sphere_upgrade_description),
+    "galaxy_cluster": ("Galaxy Cluster Upgrade", 1.4 * 10**24, 7, 1000, galaxy_cluster_upgrade_description),
+    "multiverse": ("Multiverse Upgrade", 1.4 * 10**27, 7.5, 2000, multiverse_upgrade_description)
 }
 
 regular_upgrades = {
@@ -117,7 +173,7 @@ def get_upgrade(key):
 def get_all_upgrades():
     all_upgrades = []
     with open("Elijah/upgrade.csv", "r") as f:
-        with open("Elijah's/building_upgrades.csv", "r") as f2:
+        with open("Elijah/building_upgrades.csv", "r") as f2:
             reader = csv.DictReader(f)
             reader_2 = csv.DictReader(f2)
             for row in reader:
@@ -134,48 +190,11 @@ def get_all_upgrades():
                     all_upgrades.append(get_upgrade(key)[0])
         return all_upgrades
     
-def get_buildings():
-    with open("Elijah/building.csv", "r") as f:
-        reader3 = csv.DictReader(f)
-        buildings = []
-        for row in reader3:
-            building = Building(row["Name"], float(row["Cost"]), float(row["RPS"]), False, 1, row["Description"])
-            buildings.append(building)
+def get_all_buildings():
+    with open('Elijah\\building.csv', 'r', newline='') as file:
+        reader = csv.DictReader(file)
+        buildings=[]
+        for row in reader:
+            buildings.append(Building(row['name'], float(row[' cost']), float(row[' rps']), row[' owned'] == 'True', float(row[' multiplier']), row[' description variable']))
         return buildings
-
-def get_cost(upgrade_key):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    elif upgrade_key in regular_upgrades:
-        upgrade = get_upgrade(upgrade_key)[0]
-        return upgrade.get_cost()
-    else:
-        raise ValueError("Invalid upgrade!")
     
-def purchase_upgrade(upgrade_key, cookies):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        cost = upgrade.get_cost()
-        if cookies >= cost:
-            cookies -= cost
-            upgrade.purchase()
-            return cookies, upgrade
-        else:
-            raise ValueError("Not enough rocks to purchase this upgrade")
-    else:
-        raise ValueError("Invalid upgrade!")
-    
-def get_effect():
-    total_effect = 1
-    for upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)[0]
-        total_effect *= upgrade.get_effect()
-    return total_effect
-
-def upgrade_building(building_index, upgrade_key):
-    if upgrade_key in upgrade_stats:
-        upgrade = get_upgrade(upgrade_key)
-        building = buildings[building_index]
-        building["mult"] += upgrade.get_effect()
-        upgrade.purchase_upgrade()

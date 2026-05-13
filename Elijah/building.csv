@@ -1,4 +1,4 @@
-name, cost, rps, owned, mulitplier, description variable
+name, cost, rps, owned, multiplier, description variable,image
 pickaxe, 15, 0.1, 0, 1, pickaxe_description
 alien, 100, 1, 0, 1, alien_description
 grinder, 1100, 8, 0, 1, grinder_description
@@ -8,5 +8,6 @@ asteroid portal, 1400000, 1400, 0, 1, asteroid_portal_description
 time machine, 20000000, 7800, 0, 1, time_machine_description
 quantum drill, 330000000, 44000, 0, 1, quantum_drill_description
 dyson sphere, 5100000000, 260000, 0, 1, dyson_sphere_description
+galaxy cluster, 75000000000, 1600000, 0, 1, galaxy_description
 galaxy cluster, 75000000000, 1600000, 0, 1, galaxy_description
 multiverse, 1400000000000000000000000000, 1000000000000, 0, 1, multiverse_description

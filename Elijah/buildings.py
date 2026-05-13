@@ -2,6 +2,8 @@ cookies = 0
 rps = 0
 click_multiplier = 1
 
+import csv
+
 from upgrade_logic import *
 
 class Building:
@@ -13,9 +15,9 @@ class Building:
         self.mult = mult
         self.description = description
 
-    def purchase(self):
+    def purchase(self,cookies):
         if cookies >= self.cost:
-            global cookies, rps
+            global  rps
             cookies -= self.cost
             self.owned += 1
             rps += self.rps * self.mult
@@ -61,11 +63,10 @@ buildings = [
     {"name": "Multiverse", "cost": 1.4 * 10**27, "rps": 1 * 10**12, "owned": False, "mult": 1, "description": multiverse_description}
 ]
 
-def buy_building(building_index, cookies, rps):
-    building = buildings[building_index]
-    if cookies >= building["cost"]:
-        cookies -= building["cost"]
-        building["owned"] += 1
-        rps += building["rps"] * building["mult"]
-        building["cost"] = math_for_exponential_cost_increase(building["cost"], 1.15, 1)
-    return cookies, rps
+def get_all_buildings():
+    with open('buildings.csv', 'r', newline='') as file:
+        reader = csv.DictReader(file)
+        buildings=[]
+        for row in reader:
+            buildings.append(Building(row['name'], float(row[' cost']), float(row['rps']), row['owned'] == 'True', float(row['mult']), row['description']))
+        return buildings
