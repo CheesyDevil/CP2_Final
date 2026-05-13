@@ -43,7 +43,7 @@ def click(mouse,upgrades,counter, buildings,button_mult):
                 upgrades[i+12].purchase()
     #prestige
     if width/6<=mouse[0]<=width/12*7 and height<=mouse[1]<=height/12*11:
-        return True #prestige
+        pass #prestige
     #button click
     else:
-       counter=button_click(button_flat,button_mult,counter) #button_click
+       return button_click(button_flat,button_mult,counter) #button_click
