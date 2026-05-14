@@ -22,8 +22,13 @@ class Upgrade:
     def get_effect(self):
         self.effect_multiplier=1 + (self.effect_multiplier * self.level)
 
-    def purchase(self):
-        self.level += 1
+    def purchase(self,cookies):
+        if cookies >= self.base_cost:
+            cookies -= self.base_cost
+            self.level += 1
+            self.base_cost = math_for_exponential_cost_increase(self.base_cost, 1.15, 1)
+            return cookies
+
 
 class Building:
     def __init__(self, name, cost, rps, owned=False, mult=1, description="",image=""):
@@ -173,8 +178,8 @@ def get_upgrade(key):
 
 def get_all_upgrades():
     all_upgrades = []
-    with open("Elijah/upgrade.csv", "r") as f:
-        with open("Elijah/building_upgrades.csv", "r") as f2:
+    with open("Elijah\\upgrade.csv", "r") as f:
+        with open("Elijah\\building_upgrades.csv", "r") as f2:
             reader = csv.DictReader(f)
             reader_2 = csv.DictReader(f2)
             for row in reader:
@@ -193,7 +198,7 @@ def get_all_upgrades():
     
 def get_all_buildings():
     buildings = []
-    with open('Elijah/building.csv', 'r', newline='', encoding='utf-8') as file:
+    with open('Elijah\\building.csv', 'r', newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         
         for row in reader:
