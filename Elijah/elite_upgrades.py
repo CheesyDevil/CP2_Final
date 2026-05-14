@@ -41,19 +41,19 @@ class Building:
             self.owned += 1
             self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
 
-pickaxe_upgrade_description = "Increases the speed of your Pickaxes! Increases the multiplier for the Pickaxe building by 0.5 for each level of this upgrade. The cost of this upgrade doubles with each purchase."
+pickaxe_upgrade_description = f"Increases the speed of your Pickaxes!\nIncreases the multiplier for the Pickaxe building by 0.5 for each level of this upgrade\nThe cost of this upgrade doubles with each purchase."
 
-alien_upgrade_description = "Increases the stamina of your Aliens! Increases the multiplier for the Alien building by 1 for each level of this upgrade. The cost of this upgrade increases by 150% with each purchase."
+alien_upgrade_description = f"Increases the stamina of your Aliens!\nIncreases the multiplier for the Alien building by 1 for each level of this upgrade\nThe cost of this upgrade increases by 150% with each purchase."
 
-grinder_upgrade_description = "Make your Grinders sharper! Increases the multiplier for the Grinder building by 2 for each level of this upgrade. The cost of this upgrade triples with each purchase."
+grinder_upgrade_description = f"Make your Grinders sharper!\nIncreases the multiplier for the Grinder building by 2 for each level of this upgrade./nThe cost of this upgrade triples with each purchase."
 
-quarry_upgrade_description = "Vehicles in your Quarry will now go faster and have more carrying capacity! Increases the multiplier for the Quarry building by 5 for each level of this upgrade. The cost of this upgrade increases by 250% with each purchase."
+quarry_upgrade_description = f"Vehicles in your Quarry will now go faster and have more carrying capacity!\nIncreases the multiplier for the Quarry building by 5 for each level of this upgrade.\nThe cost of this upgrade increases by 250% with each purchase."
 
-rock_factory_upgrade_description = "Your rock factories will now produce more rocks! Increases the multiplier for the Rock Factory building by 10 for each level of this upgrade. The cost of this upgrade quadruples with each purchase."
+rock_factory_upgrade_description = f"Your rock factories will now produce more rocks!\nIncreases the multiplier for the Rock Factory building by 10 for each level of this upgrade.\nThe cost of this upgrade quadruples with each purchase."
 
-asteroid_portal_upgrade_description = "Travel faster through the Asteroid Portal! Increases the multiplier for the Asteroid Portal building by 20 for each level of this upgrade. The cost of this upgrade increases by 350% with each purchase."
+asteroid_portal_upgrade_description = f"Travel faster through the Asteroid Portal!\nIncreases the multiplier for the Asteroid Portal building by 20 for each level of this upgrade.\nThe cost of this upgrade increases by 350% with each purchase."
 
-time_machine_upgrade_description = "Your Time Machine will now mine more rocks from the past! Increases the multiplier for the Time Machine building by 50 for each level of this upgrade. The cost of this upgrade quintuples with each purchase."
+time_machine_upgrade_description = f"Your Time Machine will now mine more rocks from the past!\nIncreases the multiplier for the Time Machine building by 50 for each level of this upgrade. The cost of this upgrade quintuples with each purchase."
 
 quantum_drill_upgrade_description = "Your Quantum Drill will now mine more rocks from the quantum realm! Increases the multiplier for the Quantum Drill building by 100 for each level of this upgrade. The cost of this upgrade increases by 450% with each purchase."
 
