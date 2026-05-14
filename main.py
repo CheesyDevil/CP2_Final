@@ -11,10 +11,10 @@ def main():
     rps=int(0)
     counter=int(0)
     running=True
+    upgrades=e.get_all_upgrades()
+    buildings=e.get_all_buildings()
     while running:
         screen.fill((0,0,0))
-        upgrades=e.get_all_upgrades()
-        buildings=e.get_all_buildings()
         mouse=p.mouse.get_pos()
         for ev in p.event.get():
             if ev.type==p.MOUSEBUTTONDOWN:

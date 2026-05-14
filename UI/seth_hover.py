@@ -29,7 +29,7 @@ def load_image(image,coords,scale):
 
 def rounding(number):
 	length=len(str(int(number)))
-	index=(length-1)//3
+	index=(length)//3
 	letters=["   ",'K  ','M  ','B  ', 'T  ','Qu ','Qi ','Sx ','Sp ','Oc ','Nv ', 'Dc ', 'UnD']
 	letter=letters[index]
 	fnum=(m.ceil((number*1000)/(10**(length-(length%3)))))/1000
@@ -59,7 +59,7 @@ def hover(mouse,counter,buildings,upgrades):
         pass #button_click
     #Counter
     rnumber=rounding(counter)
-    countbox=desc_font.render(rnumber,True,color4)
+    countbox=coun_font.render(rnumber,True,color4)
     screen.blit(countbox,[width/6,height/12,width/12*5,height/12])
         #Buildings
     for i in range(0,12):
@@ -72,7 +72,7 @@ def hover(mouse,counter,buildings,upgrades):
             load_image(buildings[11-i].image,(width/12*7,height/12*(11-i)),(width/12,height/12))
     #building upgrades
     for i in range(0,12):
-        if width/12*11<=mouse[0]<=width and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
+        if width/12*11<=mouse[0]<=width and (height/12*(12-i))<=mouse[1]<=(height/12*(12-i)):
             p.draw.rect(screen,color2,[width/12*11,height/12*(11-i),width/3,height/12])
             p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
             text=upgrades[11-i].description
