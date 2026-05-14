@@ -53,65 +53,65 @@ rock_factory_upgrade_description = f"Your rock factories will now produce more r
 
 asteroid_portal_upgrade_description = f"Travel faster through the Asteroid Portal!\nIncreases the multiplier for the Asteroid Portal building by 20 for each level of this upgrade.\nThe cost of this upgrade increases by 350% with each purchase."
 
-time_machine_upgrade_description = f"Your Time Machine will now mine more rocks from the past!\nIncreases the multiplier for the Time Machine building by 50 for each level of this upgrade. The cost of this upgrade quintuples with each purchase."
+time_machine_upgrade_description = f"Your Time Machine will now mine more rocks from the past!\nIncreases the multiplier for the Time Machine building by 50 for each level of this upgrade. \nThe cost of this upgrade quintuples with each purchase."
 
-quantum_drill_upgrade_description = "Your Quantum Drill will now mine more rocks from the quantum realm! Increases the multiplier for the Quantum Drill building by 100 for each level of this upgrade. The cost of this upgrade increases by 450% with each purchase."
+quantum_drill_upgrade_description = f"Your Quantum Drill will now mine more rocks from the quantum realm! \nIncreases the multiplier for the Quantum Drill building by 100 for each level of this upgrade. \nThe cost of this upgrade increases by 450% with each purchase."
 
-alien_planet_upgrade_description = "Your Alien Planet will now produce more exotic rocks! Increases the multiplier for the Alien Planet building by 200 for each level of this upgrade. The cost of this upgrade sextuples with each purchase."
+alien_planet_upgrade_description = f"Your Alien Planet will now produce more exotic rocks! \nIncreases the multiplier for the Alien Planet building by 200 for each level of this upgrade. \nThe cost of this upgrade sextuples with each purchase."
 
-dyson_sphere_upgrade_description = "Your Dyson Sphere will now harness more energy from the stars! Increases the multiplier for the Dyson Sphere building by 500 for each level of this upgrade. The cost of this upgrade increases by 550% with each purchase."
+dyson_sphere_upgrade_description = f"Your Dyson Sphere will now harness more energy from the stars! \nIncreases the multiplier for the Dyson Sphere building by 500 for each level of this upgrade. \nThe cost of this upgrade increases by 550% with each purchase."
 
-galaxy_cluster_upgrade_description = "Your Galaxy Cluster will now produce more cosmic dust! Increases the multiplier for the Galaxy Cluster building by 1000 for each level of this upgrade. The cost of this upgrade septuples with each purchase."
+galaxy_cluster_upgrade_description = f"Your Galaxy Cluster will now produce more cosmic dust! \nIncreases the multiplier for the Galaxy Cluster building by 1000 for each level of this upgrade. \nThe cost of this upgrade septuples with each purchase."
 
-multiverse_upgrade_description = "Your Multiverse will now produce more multiversal energy! Increases the multiplier for the Multiverse building by 2000 for each level of this upgrade. The cost of this upgrade increases by 650% with each purchase."
+multiverse_upgrade_description = f"Your Multiverse will now produce more multiversal energy! \nIncreases the multiplier for the Multiverse building by 2000 for each level of this upgrade. \nThe cost of this upgrade increases by 650% with each purchase."
 
-acid_description = "Your acid will now dissolve rocks faster! Increases the multiplier for all buildings by 1.5 for each level of this upgrade. The cost of this upgrade doubles with each purchase."
+acid_description = f"Your acid will now dissolve rocks faster! \nIncreases the multiplier for all buildings by 1.5 for each level of this upgrade. \nThe cost of this upgrade doubles with each purchase."
 
-oddly_sharp_shovels_description = "Your found an ancient shovel that can cut through rocks like butter! Increases the multiplier for all buildings by 1.5 for each level of this upgrade. The cost of this upgrade increases by 150% with each purchase."
+oddly_sharp_shovels_description = f"Your found an ancient shovel that can cut through rocks like butter! \nIncreases the multiplier for all buildings by 1.5 for each level of this upgrade. \nThe cost of this upgrade increases by 150% with each purchase."
 
-pure_luck_description = "Your miners will now have better luck finding rocks! Increases the multiplier for all buildings by 1 for each level of this upgrade. The cost of this upgrade triples with each purchase."
+pure_luck_description = f"Your miners will now have better luck finding rocks! \nIncreases the multiplier for all buildings by 1 for each level of this upgrade. \nThe cost of this upgrade triples with each purchase."
 
-miners_intuition_description = "Your miners will now have better intuition about where to find rocks! Increases the multiplier for all buildings by 2 for each level of this upgrade. The cost of this upgrade increases by 250% with each purchase."
+miners_intuition_description = f"Your miners will now have better intuition about where to find rocks! \nIncreases the multiplier for all buildings by 2 for each level of this upgrade. \nThe cost of this upgrade increases by 250% with each purchase."
 
-get_a_foundry_description = "You will now have a foundry to process your rocks! Increases the multiplier for all buildings by 5 for each level of this upgrade. The cost of this upgrade increases by 350% with each purchase."
+get_a_foundry_description = f"You will now have a foundry to process your rocks! \nIncreases the multiplier for all buildings by 5 for each level of this upgrade. \nThe cost of this upgrade increases by 350% with each purchase."
 
-better_tools_description = "Your tools will now be better quality! Increases the multiplier for all buildings by 10 for each level of this upgrade. The cost of this upgrade increases by 450% with each purchase."
+better_tools_description = f"Your tools will now be better quality! \nIncreases the multiplier for all buildings by 10 for each level of this upgrade. \nThe cost of this upgrade increases by 450% with each purchase."
 
-mining_bullets_description = "Your mining bullets will now be more effective! Increases the multiplier for all buildings by 20 for each level of this upgrade. The cost of this upgrade increases by 550% with each purchase."
+mining_bullets_description = f"Your mining bullets will now be more effective! \nIncreases the multiplier for all buildings by 20 for each level of this upgrade. \nThe cost of this upgrade increases by 550% with each purchase."
 
-asteroid_mining_description = "You will now be able to mine more asteroids! Increases the multiplier for all buildings by 50 for each level of this upgrade. The cost of this upgrade increases by 650% with each purchase."
+asteroid_mining_description = f"You will now be able to mine more asteroids! \nIncreases the multiplier for all buildings by 50 for each level of this upgrade. \nThe cost of this upgrade increases by 650% with each purchase."
 
-massive_dumptruck_description = "You will now have a massive dump truck to transport your rocks! Increases the multiplier for all buildings by 100 for each level of this upgrade. The cost of this upgrade increases by 750% with each purchase."
+massive_dumptruck_description = f"You will now have a massive dump truck to transport your rocks! \nIncreases the multiplier for all buildings by 100 for each level of this upgrade. \nThe cost of this upgrade increases by 750% with each purchase."
 
-alien_technology_description = "You will now have access to alien technology! Increases the multiplier for all buildings by 200 for each level of this upgrade. The cost of this upgrade increases by 850% with each purchase."
+alien_technology_description = f"You will now have access to alien technology! \nIncreases the multiplier for all buildings by 200 for each level of this upgrade. \nThe cost of this upgrade increases by 850% with each purchase."
 
-improved_solar_panels_description = "Your solar panels will now be more efficient and bigger! Increases the multiplier for all buildings by 500 for each level of this upgrade. The cost of this upgrade increases by 950% with each purchase."
+improved_solar_panels_description = f"Your solar panels will now be more efficient and bigger! \nIncreases the multiplier for all buildings by 500 for each level of this upgrade. \nThe cost of this upgrade increases by 950% with each purchase."
 
-insane_aliens_description = "Your aliens will now be more insane and productive! Increases the multiplier for all buildings by 1000 for each level of this upgrade. The cost of this upgrade increases by 1050% with each purchase."
+insane_aliens_description = f"Your aliens will now be more insane and productive! \nIncreases the multiplier for all buildings by 1000 for each level of this upgrade. \nThe cost of this upgrade increases by 1050% with each purchase."
 
-pickaxe_description = "A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
+pickaxe_description = f"A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
 
-alien_description = "A friendly alien that helps you mine rocks! Increases RPS by 1."
+alien_description = f"A friendly alien that helps you mine rocks! Increases RPS by 1."
 
-grinder_description = "A powerful grinder that can crush rocks into dust for easier processing! Increases RPS by 8."
+grinder_description = f"A powerful grinder that can crush rocks into dust for easier processing! Increases RPS by 8."
 
-quarry_description = "A large quarry that can extract rocks from deep in the asteroid's ground! Increases RPS by 47."
+quarry_description = f"A large quarry that can extract rocks from deep in the asteroid's ground! Increases RPS by 47."
 
-rock_factory_description = "A factory that can mass-produce rocks for you! Increases RPS by 260."
+rock_factory_description = f"A factory that can mass-produce rocks for you! Increases RPS by 260."
 
-asteroid_portal_description = "A portal that allows you to access asteroids in other parts of the universe! Increases RPS by 10,000."
+asteroid_portal_description = f"A portal that allows you to access asteroids in other parts of the universe! Increases RPS by 10,000."
 
-time_machine_description = "Takes you back in time to mine more rocks from the past and future! Increases RPS by 65 million."
+time_machine_description = f"Takes you back in time to mine more rocks from the past and future! Increases RPS by 65 million."
 
-quantum_drill_description = "A drill that uses quantum mechanics to mine rocks at an incredible speed, and also be in multiple places at once! Increases RPS by 430 million."
+quantum_drill_description = f"A drill that uses quantum mechanics to mine rocks at an incredible speed, and also be in multiple places at once! Increases RPS by 430 million."
 
-alien_planet_description = "A planet inhabited by friendly aliens who help you mine alien minerals! Increases RPS by 2.9 billion."
+alien_planet_description = f"A planet inhabited by friendly aliens who help you mine alien minerals! Increases RPS by 2.9 billion."
 
-dyson_sphere_description = "A megastructure that surrounds a star and captures its energy to mine rocks! Increases RPS by 20 billion."
+dyson_sphere_description = f"A megastructure that surrounds a star and captures its energy to mine rocks! Increases RPS by 20 billion."
 
-galaxy_cluster_description = "Now you can mine rocks from multiple different galaxies! Increases RPS by 140 billion."
+galaxy_cluster_description = f"Now you can mine rocks from multiple different galaxies! Increases RPS by 140 billion."
 
-multiverse_description = "You can now mine rocks from multiple universes at once! Increases RPS by 1 trillion."
+multiverse_description = f"You can now mine rocks from multiple universes at once! Increases RPS by 1 trillion."
 
 buildings = [
     {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1, "description": pickaxe_description},
