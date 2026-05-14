@@ -1,4 +1,4 @@
-name, cost, rps, owned, multiplier, description,image
+name, cost, rps, owned, multiplier, description variable,image
 pickaxe, 15, 0.1, 0, 1, f"A sturdy pickaxe that can mine rocks way faster! \nIncreases RPS by 0.1.", GUI/New Piskel-3.png.png
 alien, 100, 1, 0, 1, f"A friendly alien that helps you mine rocks! \nIncreases RPS by 1.", GUI/New Piskel-2.png.png
 grinder, 1100, 8, 0, 1, f"A powerful grinder that can crush rocks into dust for easier processing! \nIncreases RPS by 8.", GUI/New Piskel-2.png (1).png
