@@ -1,13 +1,13 @@
 name, cost, rps, owned, multiplier, description variable,image
-pickaxe, 15, 0.1, 0, 1, pickaxe_description
-alien, 100, 1, 0, 1, alien_description
-grinder, 1100, 8, 0, 1, grinder_description
-quarry, 12000, 47, 0, 1, quarry_description
-rock factory, 130000, 260, 0, 1, rock_factory_description
-asteroid portal, 1400000, 1400, 0, 1, asteroid_portal_description
-time machine, 20000000, 7800, 0, 1, time_machine_description
-quantum drill, 330000000, 44000, 0, 1, quantum_drill_description
-alien planet, 1400000000, 100000, 0 , 1, alien_planet_description
-dyson sphere, 5100000000, 260000, 0, 1, dyson_sphere_description
-galaxy cluster, 75000000000, 1600000, 0, 1, galaxy_description
-multiverse, 1400000000000000000000000000, 1000000000000, 0, 1, multiverse_description
+pickaxe, 15, 0.1, 0, 1, pickaxe_description, GUI/New Piskel-3.png.png
+alien, 100, 1, 0, 1, alien_description, GUI/New Piskel-2.png.png
+grinder, 1100, 8, 0, 1, grinder_description, GUI/New Piskel-2.png (1).png
+quarry, 12000, 47, 0, 1, quarry_description, GUI/New Piskel-3.png (1).png
+rock factory, 130000, 260, 0, 1, rock_factory_description, GUI/New Piskel-4.png.png
+asteroid portal, 1400000, 1400, 0, 1, asteroid_portal_description, GUI/New Piskel-5.png.png
+time machine, 20000000, 7800, 0, 1, time_machine_description, GUI/New Piskel-6.png.png
+quantum drill, 330000000, 44000, 0, 1, quantum_drill_description, GUI/New Piskel-2.png-7.png.png
+alien planet, 1400000000, 100000, 0 , 1, alien_planet_description, GUI/New Piskel-2.png-8.png.png
+dyson sphere, 5100000000, 260000, 0, 1, dyson_sphere_description, GUI/New Piskel-2.png-8.png-3.png.png
+galaxy cluster, 75000000000, 1600000, 0, 1, galaxy_description, GUI/New Piskel-2.png-8.png-1.png.png
+multiverse, 1400000000000000000000000000, 1000000000000, 0, 1, multiverse_description, GUI/New Piskel-2.png-8.png-2.png.png
