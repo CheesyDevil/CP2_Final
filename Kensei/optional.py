@@ -2,7 +2,7 @@ import math
 from prestige import *
 
 
-#don't know if we need this
+#don't know if we need this but, function for getting the preview 
 def get_prestige_preview(self):
     raw_strange_matter = convert_lifetime_rocks_to_strange_matter(
         self.lifetime_rocks
@@ -21,6 +21,7 @@ def get_prestige_preview(self):
         "strange_matter_gained": strange_matter_gained
     }
 
+#Make a function for confrnming the pretige
 def confirm_prestige(self):
     preview = self.get_prestige_preview()
     strange_matter_gained = preview["strange_matter_gained"]
