@@ -29,18 +29,18 @@ def click(mouse,upgrades,counter, buildings,button_mult):
     #Buildings
     for i in range(0,12):
         if width/12*7<=mouse[0]<=width/12*11 and height/12*(12-(i+1))<=mouse[1]<=height/12*(12-i):
-            if buildings[i].cost<=counter:
-                buildings[i].purchase()
+            if buildings[11-i].cost<=counter:
+                return buildings[11-i].purchase(counter)
     #building upgrades
     for i in range(0,12):
         if width/12*11<=mouse[0]<=width and height/12*(12-(i+1))<=mouse[1]<=height/12*(12-i):
-            if upgrades[i].base_cost<=counter:
-                upgrades[i].purchase()
+            if upgrades[11-i].base_cost<=counter:
+                return upgrades[11-i].purchase()
     #other upgrades
     for i in range(0,12):
         if 0<=mouse[0]<=width/6 and height/12*(12-(i+1))<=mouse[1]<=height/12*(12-i):
-            if upgrades[i+12].base_cost<=counter:
-                upgrades[i+12].purchase()
+            if upgrades[23-i].base_cost<=counter:
+                return upgrades[23-i].purchase()
     #prestige
     if width/6<=mouse[0]<=width/12*7 and height<=mouse[1]<=height/12*11:
         pass #prestige

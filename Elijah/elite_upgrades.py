@@ -40,6 +40,7 @@ class Building:
             cookies -= self.cost
             self.owned += 1
             self.cost = math_for_exponential_cost_increase(self.cost, 1.15, 1)
+            return cookies
 
 pickaxe_upgrade_description = f"Increases the speed of your Pickaxes!\nIncreases the multiplier for the Pickaxe building by 0.5 for each level of this upgrade\nThe cost of this upgrade doubles with each purchase."
 
