@@ -11,11 +11,13 @@ The player may also purchase upgrades to increase rock production for these buil
 
 After earning a certain number of rocks, the player can 'ascend', losing all their progress but earning strange matter and prestige levels. Prestige levels add a permanent boost (+1% per level) to the rate of rock production in future playthroughs, while strange matter can be spent on a wide variety of prestige upgrades. However, the number of rocks needed to unlock the next prestige level goes up proportionally with the cube of the level, becoming harder to attain as more are acquired.
 
-## How to use Play the Game
+## How to Play the Game
 ***
-1. Click the rock
-2. Buy upgrades
-3. Try to collect as many rocks as possible
+1. Go to the main.py file
+2. Press run
+3. Click the rock
+4.  Buy upgrades
+5. Try to collect as many rocks as possible
 
 ## List of Key Features
 ***
