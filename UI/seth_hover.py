@@ -16,7 +16,7 @@ color4=(255,255,255)
 
 
 
-desc_font=p.font.SysFont('Corbeal',35)
+desc_font=p.font.SysFont('Corbeal',20)
 coun_font=p.font.SysFont('Corbeal',40)
 
 def load_image(image,coords,scale):
@@ -37,18 +37,20 @@ def rounding(number):
 
 
 def hover(mouse,counter,buildings,upgrades):
+    width=screen.get_width()
+    height=screen.get_height()
     #prestige
     if width/6<=mouse[0]<=width/12*7 and height<=mouse[1]<=height/12*11:
         p.draw.rect(screen,color2,[width/6,0,width/12*5,height/12]) #prestige
     #Buildings
     for i in range(0,12):
-        p.draw.rect(screen,color1,[width/12*7,height/12*i,width/3,height/12])
+        p.draw.rect(screen,color1,[width/12*7,height/12*(11-i),width/3,height/12])
     #building upgrades
     for i in range(0,12):
-        p.draw.rect(screen,color1,[width/12*11,height/12*i,width/12,height/12]) 
+        p.draw.rect(screen,color1,[width/12*11,height/12*(11-i),width/12,height/12]) 
     #other upgrades
     for i in range(0,12):
-        p.draw.rect(screen,color1,[0,height/12*i,width/6,height/12])
+        p.draw.rect(screen,color1,[0,height/12*(11-i),width/6,height/12])
         #prestige
         p.draw.rect(screen,color1,[width/6,0,width/12*5,height/12])
         #button click
@@ -62,27 +64,27 @@ def hover(mouse,counter,buildings,upgrades):
         #Buildings
     for i in range(0,12):
         if width/12*7<=mouse[0]<=width/12*11 and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
-            p.draw.rect(screen,color2,[width/12*7,height/12*i,width/3,height/12])
+            p.draw.rect(screen,color2,[width/12*7,height/12*(11-i),width/3,height/12])
             p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
-            text=f"{buildings[i].cost}\n{buildings[i].description}"
+            text=f"{buildings[11-i].cost}\n{buildings[11-i].description}"
             textbox=desc_font.render(text,True,color4)
             screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
-            load_image(buildings[i].image,(width/12*7,height/12*i),(width/12,height/12))
+            load_image(buildings[11-i].image,(width/12*7,height/12*(11-i)),(width/12,height/12))
     #building upgrades
     for i in range(0,12):
         if width/12*11<=mouse[0]<=width and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
-            p.draw.rect(screen,color2,[width/12*11,height/12*i,width/3,height/12])
+            p.draw.rect(screen,color2,[width/12*11,height/12*(11-i),width/3,height/12])
             p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
-            text=upgrades[i].description
+            text=upgrades[11-i].description
             textbox=desc_font.render(text,True,color4)
             screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
-            load_image(upgrades[i].image,(width/12*11,height/12*i),(width/12,height/12))
+            load_image(upgrades[11-i].image,(width/12*11,height/12*(11-i)),(width/12,height/12))
     #other upgrades
     for i in range(0,12):
         if 0<=mouse[0]<=width/6 and (height/12*(12-(i+1)))<=mouse[1]<=(height/12*(12-i)):
-            p.draw.rect(screen,color2,[0,height/12*i,width/3,height/12])
-            p.draw.rect(screen,color3,[mouse[0]-width/4,mouse[1],width/4,height/6])
-            text=upgrades[i+12].description
+            p.draw.rect(screen,color2,[0,height/12*(11-i),width/6,height/12])
+            p.draw.rect(screen,color3,[mouse[0]+width/4,mouse[1],width/4,height/6])
+            text=upgrades[23-i].description
             textbox=desc_font.render(text,True,color4)
-            screen.blit(textbox,(mouse[0]-width/4,mouse[1]))
-            load_image(upgrades[i+12].image,(0,height/12*i),(width/12,height/12))
+            screen.blit(textbox,(mouse[0]+width/4,mouse[1]))
+            load_image(upgrades[23-i].image,(0,height/12*(11-i)),(width/12,height/12))
