@@ -1,0 +1,1 @@
+r.generate_rocks(counter,rps)

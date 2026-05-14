@@ -21,7 +21,7 @@ def main():
                 counter=c.click(mouse,upgrades,counter,buildings,button_mult=1)
             if ev.type==p.QUIT:
                 running=False
-        r.update_rock_generation(rps,upgrades,buildings)
+        rps=r.update_rock_generation(rps,upgrades,buildings)
         counter=r.generate_rocks(counter,rps)
         h.hover(mouse,counter,buildings,upgrades)
         p.display.update()
