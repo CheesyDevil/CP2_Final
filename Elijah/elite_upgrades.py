@@ -95,29 +95,29 @@ improved_solar_panels_description = f"Your solar panels will now be more efficie
 
 insane_aliens_description = f"Your aliens will now be more insane and productive! \nIncreases the multiplier for all buildings by 1000 for each level of this upgrade. \nThe cost of this upgrade increases by 1050% with each purchase."
 
-pickaxe_description = f"A sturdy pickaxe that can mine rocks way faster! Increases RPS by 0.1."
+pickaxe_description = f"A sturdy pickaxe that can mine rocks way faster! \nIncreases RPS by 0.1."
 
-alien_description = f"A friendly alien that helps you mine rocks! Increases RPS by 1."
+alien_description = f"A friendly alien that helps you mine rocks! \nIncreases RPS by 1."
 
-grinder_description = f"A powerful grinder that can crush rocks into dust for easier processing! Increases RPS by 8."
+grinder_description = f"A powerful grinder that can crush rocks into dust for easier processing! \nIncreases RPS by 8."
 
-quarry_description = f"A large quarry that can extract rocks from deep in the asteroid's ground! Increases RPS by 47."
+quarry_description = f"A large quarry that can extract rocks from deep in the asteroid's ground! \nIncreases RPS by 47."
 
-rock_factory_description = f"A factory that can mass-produce rocks for you! Increases RPS by 260."
+rock_factory_description = f"A factory that can mass-produce rocks for you! \nIncreases RPS by 260."
 
-asteroid_portal_description = f"A portal that allows you to access asteroids in other parts of the universe! Increases RPS by 10,000."
+asteroid_portal_description = f"A portal that allows you to access asteroids in other parts of the universe! \nIncreases RPS by 10,000."
 
-time_machine_description = f"Takes you back in time to mine more rocks from the past and future! Increases RPS by 65 million."
+time_machine_description = f"Takes you back in time to mine more rocks from the past and future! \nIncreases RPS by 65 million."
 
-quantum_drill_description = f"A drill that uses quantum mechanics to mine rocks at an incredible speed, and also be in multiple places at once! Increases RPS by 430 million."
+quantum_drill_description = f"A drill that uses quantum mechanics to mine rocks at an incredible speed, and also be in multiple places at once! \nIncreases RPS by 430 million."
 
-alien_planet_description = f"A planet inhabited by friendly aliens who help you mine alien minerals! Increases RPS by 2.9 billion."
+alien_planet_description = f"A planet inhabited by friendly aliens who help you mine alien minerals! \nIncreases RPS by 2.9 billion."
 
-dyson_sphere_description = f"A megastructure that surrounds a star and captures its energy to mine rocks! Increases RPS by 20 billion."
+dyson_sphere_description = f"A megastructure that surrounds a star and captures its energy to mine rocks! \nIncreases RPS by 20 billion."
 
-galaxy_cluster_description = f"Now you can mine rocks from multiple different galaxies! Increases RPS by 140 billion."
+galaxy_cluster_description = f"Now you can mine rocks from multiple different galaxies! \nIncreases RPS by 140 billion."
 
-multiverse_description = f"You can now mine rocks from multiple universes at once! Increases RPS by 1 trillion."
+multiverse_description = f"You can now mine rocks from multiple universes at once! \n67Increases RPS by 1 trillion."
 
 buildings = [
     {"name": "Pickaxe", "cost": 15, "rps": 0.1, "owned": False, "mult": 1, "description": pickaxe_description},
