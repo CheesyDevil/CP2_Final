@@ -12,6 +12,7 @@ def main():
     counter=int(0)
     running=True
     while running:
+        screen.fill((0,0,0))
         upgrades=e.get_all_upgrades()
         buildings=e.get_all_buildings()
         mouse=p.mouse.get_pos()
@@ -24,6 +25,7 @@ def main():
         counter=r.generate_rocks(counter,rps)
         h.hover(mouse,counter,buildings,upgrades)
         p.display.update()
+
     p.quit()
     sys.exit()
 
